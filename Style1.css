@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', cursive;
+}
+
+body {
+    height: 100vh;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    overflow: hidden;
+    color: #fff;
+}
+
+/* Container */
+.container {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 40px;
+}
+
+/* Title */
+.title {
+    font-size: 3.2rem;
+    margin-top: 20px;
+    text-shadow: 0 0 20px #ff4d6d;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+/* Cards */
+.card {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    margin: 25px auto;
+    border-radius: 25px;
+    max-width: 520px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+}
+
+/* Shyari Text */
+.shyari {
+    font-size: 1.25rem;
+    line-height: 1.8;
+    color: #ffe6ea;
+    animation: fadeUp 2s ease;
+}
+
+/* Button */
+button {
+    margin-top: 20px;
+    padding: 14px 40px;
+    border: none;
+    border-radius: 50px;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b);
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+button:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 30px #ff4b2b;
+}
+
+/* Response */
+#response {
+    margin-top: 25px;
+    font-size: 1.8rem;
+    color: #fff0f3;
+    text-shadow: 0 0 15px pink;
+}
+
+/* 3D Heart */
+.heart-3d {
+    width: 110px;
+    height: 110px;
+    background: crimson;
+    position: relative;
+    margin: 0 auto 20px;
+    transform: rotate(-45deg);
+    animation: pulse 1.8s infinite;
+}
+
+.heart-3d::before,
+.heart-3d::after {
+    content: "";
+    width: 110px;
+    height: 110px;
+    background: crimson;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.heart-3d::before {
+    top: -55px;
+    left: 0;
+}
+
+.heart-3d::after {
+    left: 55px;
+    top: 0;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { transform: rotate(-45deg) scale(1); }
+    50% { transform: rotate(-45deg) scale(1.15); }
+    100% { transform: rotate(-45deg) scale(1); }
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating Hearts */
+.hearts::before {
+    content: "❤️ 💕 💖 💗 💓 💞";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: float 12s linear infinite;
+    font-size: 2.2rem;
+    opacity: 0.35;
+}
+
+@keyframes float {
+    from { transform: translateY(100%); }
+    to { transform: translateY(-100%); }
+}
